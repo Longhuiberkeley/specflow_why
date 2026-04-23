@@ -176,13 +176,11 @@ layout: default
 
 # 🔄 The SpecFlow Lifecycle
 
-From cold clone to shipped feature.
-
-<div class="flex justify-center overflow-hidden">
+<div class="flex justify-center" style="transform: scale(1.3); transform-origin: top center;">
 
 ```mermaid {theme: 'base'}
-%%{init: {'themeVariables': { 'lineColor': '#222222', 'edgeLabelBackground': '#ffffff', 'textColor': '#222222'}}}%%
-graph LR
+%%{init: {'themeVariables': { 'lineColor': '#6CB4EE', 'edgeLabelBackground': '#ffffff', 'textColor': '#222222'}}}%%
+graph TD
     Start([Cold Clone]) --> Init[<b>/specflow-init</b><br/>preset? CI? standards?]
     
     Init --> Lean[Lean Path<br/><i>simple change</i>]
@@ -273,7 +271,15 @@ Thank you!
 [GitHub Repo](https://github.com/Longhuiberkeley/specflow) · 10 Min Talk / 5 Min Q&A
 
 <style global>
-.slidev-nav-controls, .slidev-toc, #slidev-nav {
+.slidev-nav-controls,
+.slidev-toc,
+#slidev-nav,
+.slidev-nav,
+.slidev-outline,
+.slidev-panel,
+nav[class*="slidev"],
+#slide-container nav,
+#slidev-goto-dialog {
   display: none !important;
 }
 </style>
