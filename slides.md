@@ -4,9 +4,6 @@ background: https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4
 class: text-center
 highlighter: shiki
 lineNumbers: false
-info: |
-  ## SpecFlow - Why & How
-  Presentation on SpecFlow.
 drawings:
   persist: false
 transition: slide-up
@@ -174,34 +171,73 @@ layout: default
 - **Adaptable Designs:** This allows you to confidently see what downstream architecture or code needs adjusting, making your foundational designs robust and adaptable over time.
 
 ---
-layout: two-cols-header
+layout: default
 ---
 
-# 🛠 How it Works: The Skills Interface
+# 🔄 The SpecFlow Lifecycle
 
-Your AI assistant is the UI. 10 core skills.
+From cold clone to shipped feature.
 
-::left::
+<div class="flex justify-center overflow-hidden">
 
-**1. Bootstrap & Discover**
-- `/specflow-init` CI & setup
-- `/specflow-discover` chat to draft REQs
-- `/specflow-plan` break REQs into Architecture & Stories
+```mermaid {theme: 'base'}
+graph TD
+    Start([Cold Clone]) --> Init[<b>/specflow-init</b><br/>preset? CI? standards?]
+    
+    Init --> Lean[Lean Path<br/><i>simple change</i>]
+    Init --> Full[Full Path<br/><i>new capability</i>]
+    
+    Lean --> DiscLean[<b>/specflow-discover</b><br/>1 exchange]
+    Full --> DiscFull[<b>/specflow-discover</b><br/>multi-exchange; readiness gate]
+    
+    DiscLean -- REQ.status=approved --> PlanLean[<b>/specflow-plan</b><br/>just STORY]
+    DiscFull -- REQ.status=approved --> PlanFull[<b>/specflow-plan</b><br/>ARCH → DDD → STORY]
+    
+    PlanLean -- STORY.status=approved --> Exec[<b>/specflow-execute</b><br/>impl + UT/IT/QT, parallel waves]
+    PlanFull -- STORY.status=approved --> Exec
+    
+    Exec --> Review[<b>/specflow-artifact-review</b><br/>lint + checklist + LLM review]
+    
+    Review --> Iterate[Iterate again]
+    Review --> Impact[<b>/specflow-change-impact-review</b><br/>blast-radius analysis]
+    Review --> Audit[<b>/specflow-audit</b><br/>periodic health check]
+    Review --> Adapter[<b>/specflow-adapter</b><br/>configure CI, roles, adapters]
+    
+    Impact --> Ship[<b>/specflow-ship</b><br/>baseline + DECs + quick audit]
+    Audit --> Ship
+```
 
-**2. Execute & Develop**
-- `/specflow-execute` write code & tests
-- `/specflow-adapter` CI, ReqIF, standards, RBAC
+</div>
 
-::right::
+---
+layout: default
+---
 
-**3. Review & Analyze**
-- `/specflow-artifact-review` deep review of an artifact
-- `/specflow-change-impact-review` blast-radius review
+# 🛠 Tier 1: The 10 Core Commands
 
-**4. Audit & Ship**
-- `/specflow-audit` full-project health check
-- `/specflow-ship` freeze baseline & release
-- `/specflow-pack-author` author compliance packs
+The day-to-day product interface. 
+
+<div class="text-xs">
+
+| # | Slash Command | When to Use |
+|---|---|---|
+| 1 | `/specflow-init` | Starting a new project; installing skills, packs, CI |
+| 2 | `/specflow-discover` | Capturing a new requirement through conversation |
+| 3 | `/specflow-plan` | Breaking approved REQs into architecture + stories |
+| 4 | `/specflow-execute` | Implementing approved stories with test generation |
+| 5 | `/specflow-artifact-review` | Quality review of one or more specific artifacts |
+| 6 | `/specflow-change-impact-review` | Blast-radius review of recent commits/PRs |
+| 7 | `/specflow-audit` | Periodic full-project health check |
+| 8 | `/specflow-ship` | Cutting a release: baseline + change records + quick audit |
+| 9 | `/specflow-pack-author` | Authoring a standards compliance pack |
+| 10 | `/specflow-adapter` | Managing CI, exchange formats (ReqIF), standards, team RBAC |
+
+</div>
+
+<br>
+<p class="opacity-75 text-sm mt-4">
+*Note: These compose underlying CLI commands (`uv run specflow ...`). Power users and CI pipelines can invoke these directly.*
+</p>
 
 ---
 layout: center
