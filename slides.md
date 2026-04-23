@@ -181,7 +181,8 @@ From cold clone to shipped feature.
 <div class="flex justify-center overflow-hidden">
 
 ```mermaid {theme: 'base'}
-graph TD
+%%{init: {'themeVariables': { 'lineColor': '#222222', 'edgeLabelBackground': '#ffffff', 'textColor': '#222222'}}}%%
+graph LR
     Start([Cold Clone]) --> Init[<b>/specflow-init</b><br/>preset? CI? standards?]
     
     Init --> Lean[Lean Path<br/><i>simple change</i>]
@@ -217,7 +218,11 @@ layout: default
 
 The day-to-day product interface. 
 
-<div class="text-xs">
+<style scoped>
+td, th { padding: 0.15rem 0.5rem !important; }
+</style>
+
+<div class="text-[0.65rem] leading-tight">
 
 | # | Slash Command | When to Use |
 |---|---|---|
@@ -266,3 +271,9 @@ class: text-center
 Thank you!
 
 [GitHub Repo](https://github.com/Longhuiberkeley/specflow) · 10 Min Talk / 5 Min Q&A
+
+<style global>
+.slidev-nav-controls, .slidev-toc, #slidev-nav {
+  display: none !important;
+}
+</style>
