@@ -40,18 +40,51 @@ This is the title slide.
 -->
 
 ---
+layout: default
+---
+
+# 🧗‍♀️ The Last Mile Problem
+
+AI is amazing at 0-to-1, but struggles with **production-level codebases**.
+
+- **Model Drift:** The further you get into a project, the harder it is to maintain context and consistency.
+- **Poor Task Decomposition:** Prompting *"Build me an app that downloads data and trades stock for me"* fails because it's too vague.
+- **Handling Design Changes:** If a document or design changes mid-flight, most AI frameworks don't dynamically adapt to these shifts. Consistency
+- **The Gap:** Files like `PRD.md` and `architecture.md` are steps in the right direction, but they lack rigid enforcement.
+- **Transparency/ Quality Issue:** You don't know if your vibe-coded thing is safe to deploy. 
+
+---
+layout: default
+---
+
+# 🏗️ The Current Landscape
+
+The industry recognizes this. **Spec-driven development** is emerging as a popular approach to ground LLMs.
+
+**Notable attempts in the wild:**
+- [BMAD](https://github.com/bmad-code-org/BMAD-METHOD) (virtual role-based agile thing)
+- [Claude Task Master](https://github.com/eyaltoledano/claude-task-master) (TODO list like thing)
+- [SpecKit](https://github.com/github/spec-kit) (GitHub's constitution-driven approach)
+- [GSD-2](https://github.com/gsd-build/gsd-2) 
+- [GStack](https://github.com/garrytan/gstack) (Garry Tan's stack)
+- ...
+
+<br>
+
+> **What they do** = software development methodology 
+> **My Thesis:** These are great, but they still aren't *spec-ing* rigorously enough. They lack strict process engineering.
+
+---
 layout: center
 ---
 
-# 📚 Why I Built Another Spec-Driven Framework
+# ⚙️ The Solution: Process Engineering
 
-I like the idea of doing Spec-Driven R&D
+To truly fix the last mile, we can't just rely on clever prompting or loose markdown files.
 
-- **Feel Closer to the tools I use**: I don't know how the other frameworks are built, from the ground up 
-- **Too MANY commands**: BMAD's default has AROUND 50 `/slash-command`. A bit confusing to me 
-- **Spec-driven** isn't SPEC-ing ENOUGH and CORRECTLY*
-- I want to make the **production level codebase** easier
-- **Why not.** If Garry Tan can make a gstack, I can make one too 
+We must use **Process Engineering** and **Compliance** to rigorously ground the AI.
+
+*It's time to build a system where the AI proves its work against the *law.*
 
 ---
 layout: default
@@ -67,7 +100,6 @@ LLM coding is making us **SUPER FAST**. It offloads massive amounts of cognitive
 
 <br>
 
-> **"Make me a dashboard"** *(Vibes, vague)* 🆚 **"Integrate with the OAuth API"** *(Clear right or wrong)*
 
 PRDs ground a project, but **Specifications** level that up. By explicitly defining the *right and wrong* behaviors, we leave less room for AI interpretation.
 
@@ -95,9 +127,9 @@ layout: default
 Agile and V-model solve fundamentally different problems.
 
 - **People-Driven vs Process-Driven**: Agile relies on heroic, talented individuals. V-model relies on a rigorous system.
-- **Iterative vs Upfront Rigor**: Agile builds 10%, then 20%. V-model builds the entire spec first, gets a "B" grade at each level, and refines it down the chain.
+- **Iterative vs Upfront Rigor.**
 - **Where V-model Shines (Security & Privacy):**
-  - **Hong Kong Financial Apps** (Virtual Banks, High-Frequency Trading Platforms)
+  - **Financial Apps** (Virtual Banks, High-Frequency Trading Platforms)
   - **Healthcare Technology**
   - **Automotive Systems**
 - **Documentation**: Agile trusts working software over documentation. V-model requires provable, auditable traceability.
@@ -114,7 +146,6 @@ It's an evidence-based approach to building software.
 - **Evidence-Based Compliance:** When it comes to compliance, you must be able to prove *why* something works.
 - **Perfect for LLMs:** This is why it works so well with AI. LLMs can generate the code, and the traceability chain provides the exact evidence that the AI followed the rules.
 - **Specificity is Key:** *"Make the quant trade system FAST"* isn't a good requirement. It gives a general direction but leaves way too much room for interpretation. We need explicit boundaries.
-- **Driven by Constitution:** SpecKit use a constitution and strict specificity to drive the spec, removing ambiguity.
 
 ---
 layout: default
@@ -144,6 +175,25 @@ How a single requirement fans out into a 1-to-many traceability chain:
 - **Architecture (ARCH-002):** Rate-limiting middleware to prevent brute force.
   - **Story (STORY-003):** Add Redis-based IP rate limiter.
   - **Test (UT-001):** Unit test verifying the 6th attempt is blocked.
+
+*(1 REQ → 2 ARCH → 3 Stories + 2 Tests)*
+
+---
+layout: default
+---
+
+# 📈 Example 2: A Quant Trading System
+
+Contrasting the vague *"make it fast"* prompt with a rigorous spec:
+
+**Requirement (REQ-002):** "The system must process incoming market tick data and route a trade order within 50ms (p99 latency)."
+- **Architecture (ARCH-003):** In-memory ring buffer for lock-free data ingestion.
+  - **Story (STORY-004):** Implement UDP multicast listener for exchange feed.
+  - **Story (STORY-005):** Build lock-free circular buffer for tick storage.
+  - **Test (PT-001):** Performance test asserting ingestion latency < 10µs.
+- **Architecture (ARCH-004):** Event-driven trade execution state machine.
+  - **Story (STORY-006):** Implement order routing logic (Pending → Filled).
+  - **Test (IT-002):** Integration test verifying state transitions under load.
 
 *(1 REQ → 2 ARCH → 3 Stories + 2 Tests)*
 
