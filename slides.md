@@ -16,24 +16,15 @@ fonts:
 
 # SpecFlow 🚀
 
+I want to help you MAKE PRODUCTION READY code easier. 
+
 Compliance-grade spec tracking, without the portal.
 
 *Why it matters* · *How it works*
 
 May 7, 2026
 
-<div class="flex justify-center gap-12 mt-8">
-  <div class="flex flex-col items-center">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/Longhuiberkeley/specflow" alt="Repo QR" class="w-32 h-32 rounded-lg shadow-lg mb-2" />
-    <span class="text-xs font-bold opacity-75">GitHub Repo</span>
-    <a href="https://github.com/Longhuiberkeley/specflow" class="text-xs text-blue-400 hover:text-blue-300">github.com/Longhuiberkeley/specflow</a>
-  </div>
-  <div class="flex flex-col items-center">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://longhuiberkeley.github.io/specflow_why/" alt="Slides QR" class="w-32 h-32 rounded-lg shadow-lg mb-2" />
-    <span class="text-xs font-bold opacity-75">Presentation Slides</span>
-    <a href="https://longhuiberkeley.github.io/specflow_why/" class="text-xs text-blue-400 hover:text-blue-300">longhuiberkeley.github.io/specflow_why</a>
-  </div>
-</div>
+<TitleQRCodes />
 
 <!--
 This is the title slide.
@@ -49,7 +40,7 @@ AI is amazing at 0-to-1, but struggles with **production-level codebases**.
 
 - **Model Drift:** The further you get into a project, the harder it is to maintain context and consistency.
 - **Poor Task Decomposition:** Prompting *"Build me an app that downloads data and trades stock for me"* fails because it's too vague.
-- **Handling Design Changes:** If a document or design changes mid-flight, most AI frameworks don't dynamically adapt to these shifts. Consistency
+- **Handling Design Changes:** If a document or design changes mid-flight, most AI frameworks don't dynamically adapt to these shifts. Consistency issue.
 - **The Gap:** Files like `PRD.md` and `architecture.md` are steps in the right direction, but they lack rigid enforcement.
 - **Transparency/ Quality Issue:** You don't know if your vibe-coded thing is safe to deploy. 
 
@@ -57,22 +48,39 @@ AI is amazing at 0-to-1, but struggles with **production-level codebases**.
 layout: default
 ---
 
-# 🏗️ The Current Landscape
+# ⚖️ The Spectrum of AI Development
 
-The industry recognizes this. **Spec-driven development** is emerging as a popular approach to ground LLMs.
+<DevelopmentSpectrum />
+
+Many Many things have happened in between (they are NOT mutually exclusive): 
+- TDD (Test-Driven Development), Role-based like agents, **Using Frameworks (spec-driven development)**
+- Prompt Engineering, Context Engineering, Harness Engineering
+- Indexing your codebase (e.g., [Graphify](https://graphify.net/)) 
+- Memory, `SKILL.md`, MCP, tools, ...   
+
+> In some sense, they all are about giving and managing **better** context. Like what to feed the LLM model, and in hope to get better output
+
+---
+layout: default
+---
+
+# 🏗️ Frameworks and Spec-Driven Development
+
+By giving better specification, **Spec-driven development** is emerging as a popular approach to ground LLMs 
 
 **Notable attempts in the wild:**
 - [BMAD](https://github.com/bmad-code-org/BMAD-METHOD) (virtual role-based agile thing)
-- [Claude Task Master](https://github.com/eyaltoledano/claude-task-master) (TODO list like thing)
+- [GStack](https://github.com/garrytan/gstack) (YC Garry Tan's, also some sort of agile virtual team thing)
 - [SpecKit](https://github.com/github/spec-kit) (GitHub's constitution-driven approach)
 - [GSD-2](https://github.com/gsd-build/gsd-2) 
-- [GStack](https://github.com/garrytan/gstack) (Garry Tan's stack)
+- [Kiro Code from AWS](https://kiro.dev/) 
 - ...
 
 <br>
 
-> **What they do** = software development methodology 
-> **My Thesis:** These are great, but they still aren't *spec-ing* rigorously enough. They lack strict process engineering.
+> **My Thesis**:
+> - What they do = software development methodology  
+> - These are great, but they still aren't *spec-ing* rigorously enough
 
 ---
 layout: center
@@ -81,6 +89,8 @@ layout: center
 # ⚙️ The Solution: Process Engineering
 
 To truly fix the last mile, we can't just rely on clever prompting or loose markdown files.
+
+Things being messy and badly managed are NOT a new issue. We HUMANS were kinda the ORIGINAL SLOP, but we got the planes in the sky 
 
 We must use **Process Engineering** and **Compliance** to rigorously ground the AI.
 
@@ -95,13 +105,13 @@ layout: default
 LLM coding is making us **SUPER FAST**. It offloads massive amounts of cognitive responsibility.
 
 - **We are moving too fast**: We don't have the time to reflect, learn, or catch mistakes at the speed AI generates code. 
-- **Focus on the Process, not the People**: Because the "human-in-the-loop" is overwhelmed, we must rely on a rigorous system to catch errors.
+- **Focus on the Process, not the People**: Because the "human-in-the-loop" is good, but are you quick enough and fast enough? We must rely on a rigorous system to catch errors.
 - **SpecFlow is NOT for every project**: It's not for quick Proof of Concepts (POCs). It is for important software where you actually know what you want to build.
 
 <br>
 
 
-PRDs ground a project, but **Specifications** level that up. By explicitly defining the *right and wrong* behaviors, we leave less room for AI interpretation.
+PRDs ground a project, but **Specifications** level that up. By explicitly defining the *right and wrong* behaviors, we leave **less room for AI interpretation**.
 
 ---
 layout: default
@@ -128,7 +138,7 @@ Agile and V-model solve fundamentally different problems.
 
 - **People-Driven vs Process-Driven**: Agile relies on heroic, talented individuals. V-model relies on a rigorous system.
 - **Iterative vs Upfront Rigor.**
-- **Where V-model Shines (Security & Privacy):**
+- **Where V-model Shines (Safety & Security & Privacy):**
   - **Financial Apps** (Virtual Banks, High-Frequency Trading Platforms)
   - **Healthcare Technology**
   - **Automotive Systems**
@@ -142,10 +152,10 @@ layout: default
 
 It's an evidence-based approach to building software.
 
+- **Systematic Decomposition:** Unlike Agile which focuses on user stories, the V-Model provides a structured way to break down complexity: **System → Modules → Units**.
 - **Requirements as a Law Book:** Requirements are the law. Your architecture and design are simply the *evidence* that fulfills that law.
 - **Evidence-Based Compliance:** When it comes to compliance, you must be able to prove *why* something works.
 - **Perfect for LLMs:** This is why it works so well with AI. LLMs can generate the code, and the traceability chain provides the exact evidence that the AI followed the rules.
-- **Specificity is Key:** *"Make the quant trade system FAST"* isn't a good requirement. It gives a general direction but leaves way too much room for interpretation. We need explicit boundaries.
 
 ---
 layout: default
@@ -169,14 +179,14 @@ How a single requirement fans out into a 1-to-many traceability chain:
 
 **Requirement (REQ-001):** "Users must securely authenticate before transferring funds."
 - **Architecture (ARCH-001):** OAuth 2.0 implementation for secure login.
-  - **Story (STORY-001):** Implement login screen UI.
-  - **Story (STORY-002):** Integrate auth backend.
+  - **Design (DSGN-001):** Login screen UI components & state.
+  - **Design (DSGN-002):** Auth provider integration logic.
   - **Test (IT-001):** Integration test for valid token generation.
 - **Architecture (ARCH-002):** Rate-limiting middleware to prevent brute force.
-  - **Story (STORY-003):** Add Redis-based IP rate limiter.
+  - **Design (DSGN-003):** Redis-based IP rate limiting logic.
   - **Test (UT-001):** Unit test verifying the 6th attempt is blocked.
 
-*(1 REQ → 2 ARCH → 3 Stories + 2 Tests)*
+*(1 REQ → 2 ARCH → 3 Designs + 2 Tests)*
 
 ---
 layout: default
@@ -188,14 +198,14 @@ Contrasting the vague *"make it fast"* prompt with a rigorous spec:
 
 **Requirement (REQ-002):** "The system must process incoming market tick data and route a trade order within 50ms (p99 latency)."
 - **Architecture (ARCH-003):** In-memory ring buffer for lock-free data ingestion.
-  - **Story (STORY-004):** Implement UDP multicast listener for exchange feed.
-  - **Story (STORY-005):** Build lock-free circular buffer for tick storage.
+  - **Design (DSGN-004):** UDP multicast listener module.
+  - **Design (DSGN-005):** Lock-free circular buffer implementation.
   - **Test (PT-001):** Performance test asserting ingestion latency < 10µs.
 - **Architecture (ARCH-004):** Event-driven trade execution state machine.
-  - **Story (STORY-006):** Implement order routing logic (Pending → Filled).
+  - **Design (DSGN-006):** Order routing state transition logic.
   - **Test (IT-002):** Integration test verifying state transitions under load.
 
-*(1 REQ → 2 ARCH → 3 Stories + 2 Tests)*
+*(1 REQ → 2 ARCH → 3 Designs + 2 Tests)*
 
 ---
 layout: default
@@ -208,6 +218,7 @@ layout: default
 - **Rigor Guides Development**: We don't just write code; we write specifications that enforce what the code should do. This bridges the gap, allowing LLMs to safely write production-level code.
 - **ALMs are a By-Product**: Traditional Application Lifecycle Management (ALM) portals are just a side-effect of needing this process. We don't need the heavy portal; we just need the rigor.
 - **Your Git Repo is the Database**: Markdown & YAML. All specs, tests, and audits live natively in your repository.
+- **Seamless Experience and Easy to Use:** 10 `/specflow-command` where the agents ask you questions to set up the requirements and your designs!
 
 ---
 layout: default
@@ -226,7 +237,14 @@ layout: default
 
 # 🔄 The SpecFlow Lifecycle
 
-<div class="flex justify-center" style="transform: scale(1.3); transform-origin: top center;">
+<style scoped>
+.mermaid {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.5);
+  transform-origin: top center;
+}
+</style>
 
 ```mermaid {theme: 'base'}
 %%{init: {'themeVariables': { 'lineColor': '#6CB4EE', 'edgeLabelBackground': '#ffffff', 'textColor': '#222222'}}}%%
@@ -256,41 +274,18 @@ graph TD
     Audit --> Ship
 ```
 
-</div>
-
 ---
 layout: default
 ---
 
-# 🛠 Tier 1: The 10 Core Commands
+# 🛠 The 10 Core Commands
 
-The day-to-day product interface. 
+The day-to-day product interface for managing your specs and code.
 
-<style scoped>
-td, th { padding: 0.15rem 0.5rem !important; }
-</style>
-
-<div class="text-[0.65rem] leading-tight">
-
-| # | Slash Command | When to Use |
-|---|---|---|
-| 1 | `/specflow-init` | Starting a new project; installing skills, packs, CI |
-| 2 | `/specflow-discover` | Capturing a new requirement through conversation |
-| 3 | `/specflow-plan` | Breaking approved REQs into architecture + stories |
-| 4 | `/specflow-execute` | Implementing approved stories with test generation |
-| 5 | `/specflow-artifact-review` | Quality review of one or more specific artifacts |
-| 6 | `/specflow-change-impact-review` | Blast-radius review of recent commits/PRs |
-| 7 | `/specflow-audit` | Periodic full-project health check |
-| 8 | `/specflow-ship` | Cutting a release: baseline + change records + quick audit |
-| 9 | `/specflow-pack-author` | Authoring a standards compliance pack |
-| 10 | `/specflow-adapter` | Managing CI, exchange formats (ReqIF), standards, team RBAC |
-
-</div>
+<CommandsTable />
 
 <br>
-<p class="opacity-75 text-sm mt-4">
-*Note: These compose underlying CLI commands (`uv run specflow ...`). Power users and CI pipelines can invoke these directly.*
-</p>
+- *And there are more deterministic CLI commands like `specflow status` or `uv run specflow status` to check your project health.* 
 
 ---
 layout: center
@@ -310,26 +305,33 @@ SpecFlow runs wherever you do.
 > *"If your assistant can read files and run scripts, it can run SpecFlow."*
 
 ---
+layout: default
+---
+
+# 📝 TLDR on go to the right side of the spectrum
+
+LLM is powerful, but you ?sort of? set the ceiling on how high it can go
+
+- Do NOT rush things
+- **MUST Do a BETTER JOB** on task decomposition
+- Track your TODO, and changes in REQ, Design, etc
+- Get some Best Practices/ Common Pitfalls/ Checklist for you to learn, and ensure the LLM does *good work 
+- Communicate better, like less room for interpretation errors 
+
+---
 layout: center
 class: text-center
 ---
+
+<!-- 
+NOTE: We prefer to abstract away complex HTML/divs into Vue components (like we did with global-bottom.vue). 
+For the sake of simplicity on this Q&A slide, we are keeping the inline divs, but in the future, these should be moved to a custom <QRCode /> component. 
+-->
 
 # 🎤 Q & A
 
 Thank you!
 
-[GitHub Repo](https://github.com/Longhuiberkeley/specflow) · 10 Min Talk / 5 Min Q&A
+<QnAQRCodes />
 
-<style global>
-.slidev-nav-controls,
-.slidev-toc,
-#slidev-nav,
-.slidev-nav,
-.slidev-outline,
-.slidev-panel,
-nav[class*="slidev"],
-#slide-container nav,
-#slidev-goto-dialog {
-  display: none !important;
-}
-</style>
+
