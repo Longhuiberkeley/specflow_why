@@ -34,11 +34,30 @@ This is the title slide.
 layout: default
 ---
 
+# My Pet Project: SpecFlow
+
+It's my take on how we can make **production grade** codebase with LLM. 
+
+- It's a framework with **BOTH**
+  - 10 LLM SKILLS: `/specflow-command`
+  - Application Lifecycle Management (ALM) software with `specflow checklist-run` like commands
+- It's designed to:
+  - easy to use 
+  - scalable
+  - help you build quality software (like compliance mindset) 
+    - provide evidence here and there
+  - open source
+
+---
+layout: default
+---
+
+
 # 🧗‍♀️ The Last Mile Problem
 
 AI is amazing at 0-to-1, but struggles with **production-level codebases**.
 
-- **Model Drift:** The further you get into a project, the harder it is to maintain context and consistency.
+- **Drift:** The further you get into a project, the harder it is to maintain context and consistency.
 - **Poor Task Decomposition:** Prompting *"Build me an app that downloads data and trades stock for me"* fails because it's too vague.
 - **Handling Design Changes:** If a document or design changes mid-flight, most AI frameworks don't dynamically adapt to these shifts. Consistency issue.
 - **The Gap:** Files like `PRD.md` and `architecture.md` are steps in the right direction, but they lack rigid enforcement.
@@ -90,7 +109,7 @@ layout: center
 
 To truly fix the last mile, we can't just rely on clever prompting or loose markdown files.
 
-Things being messy and badly managed are NOT a new issue. We HUMANS were kinda the ORIGINAL SLOP, but we got the planes in the sky 
+**KEY INSIGHT**: Things being messy and badly managed are NOT a new issue. We HUMANS were kinda the ORIGINAL SLOP, but we got the planes in the sky 
 
 We must use **Process Engineering** and **Compliance** to rigorously ground the AI.
 
@@ -106,7 +125,7 @@ LLM coding is making us **SUPER FAST**. It offloads massive amounts of cognitive
 
 - **We are moving too fast**: We don't have the time to reflect, learn, or catch mistakes at the speed AI generates code. 
 - **Focus on the Process, not the People**: Because the "human-in-the-loop" is good, but are you quick enough and fast enough? We must rely on a rigorous system to catch errors.
-- **SpecFlow is NOT for every project**: It's not for quick Proof of Concepts (POCs). It is for important software where you actually know what you want to build.
+- **Spec-driven is NOT for every project**: It's not for quick Proof of Concepts (POCs). It is for important software where you actually know what you want to build.
 
 <br>
 
@@ -211,14 +230,16 @@ Contrasting the vague *"make it fast"* prompt with a rigorous spec:
 layout: default
 ---
 
-# 💡 The SpecFlow Philosophy
+# 💡 The SpecFlow Philosophy. What it is?
 
 **Process-driven R&D: Compliance as Code + LLMs**
 
-- **Rigor Guides Development**: We don't just write code; we write specifications that enforce what the code should do. This bridges the gap, allowing LLMs to safely write production-level code.
+- **Development Methodology is Needed, and spec(requirement)-driven is nice**: We don't just write code; we write specifications that enforce what the code should do. This bridges the gap, allowing LLMs to safely write production-level code.
+- **Handbook Generation:** If you have that 100-page handbook for ANY project in ANY domain, you probably will have a much better **chance** to success.
 - **ALMs are a By-Product**: Traditional Application Lifecycle Management (ALM) portals are just a side-effect of needing this process. We don't need the heavy portal; we just need the rigor.
-- **Your Git Repo is the Database**: Markdown & YAML. All specs, tests, and audits live natively in your repository.
+  - **Your Git Repo is the Database**: Markdown & YAML. All specs, tests, and audits live natively in your repository.
 - **Seamless Experience and Easy to Use:** 10 `/specflow-command` where the agents ask you questions to set up the requirements and your designs!
+
 
 ---
 layout: default
@@ -308,15 +329,16 @@ SpecFlow runs wherever you do.
 layout: default
 ---
 
-# 📝 TLDR on go to the right side of the spectrum
+# 📝 My Advices on How to Be Better at AI coding or just Write Better Structured Prompts
 
 LLM is powerful, but you ?sort of? set the ceiling on how high it can go
 
 - Do NOT rush things
-- **MUST Do a BETTER JOB** on task decomposition
+- **MUST Do a BETTER JOB** on task DECOMPOSITION
 - Track your TODO, and changes in REQ, Design, etc
 - Get some Best Practices/ Common Pitfalls/ Checklist for you to learn, and ensure the LLM does *good work 
 - Communicate better, like less room for interpretation errors 
+  - Some tasks have clear **Correct or Wrong**. Some don't. Best act accordingly.
 
 ---
 layout: center
@@ -330,7 +352,7 @@ For the sake of simplicity on this Q&A slide, we are keeping the inline divs, bu
 
 # 🎤 Q & A
 
-Thank you!
+Thank you! Name is, Long Hui. Long from Hong Kong
 
 <QnAQRCodes />
 
