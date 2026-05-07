@@ -60,7 +60,7 @@ AI is amazing at 0-to-1, but struggles with **production-level codebases**.
 - **Drift:** The further you get into a project, the harder it is to maintain context and consistency.
 - **Poor Task Decomposition:** Prompting *"Build me an app that downloads data and trades stock for me"* fails because it's too vague.
 - **Handling Design Changes:** If a document or design changes mid-flight, most AI frameworks don't dynamically adapt to these shifts. Consistency issue.
-- **The Gap:** Files like `PRD.md` and `architecture.md` are steps in the right direction, but they lack rigid enforcement.
+  - **The Gap:** Files like `PRD.md` and `architecture.md` are steps in the right direction, but they lack rigid enforcement.
 - **Transparency/ Quality Issue:** You don't know if your vibe-coded thing is safe to deploy. 
 
 ---
@@ -91,15 +91,16 @@ By giving better specification, **Spec-driven development** is emerging as a pop
 - [BMAD](https://github.com/bmad-code-org/BMAD-METHOD) (virtual role-based agile thing)
 - [GStack](https://github.com/garrytan/gstack) (YC Garry Tan's, also some sort of agile virtual team thing)
 - [SpecKit](https://github.com/github/spec-kit) (GitHub's constitution-driven approach)
-- [GSD-2](https://github.com/gsd-build/gsd-2) 
-- [Kiro Code from AWS](https://kiro.dev/) 
+- [GSD-2](https://github.com/gsd-build/gsd-2), or the older GSD-1
+- [Superpower](https://github.com/obra/superpowers) 
+- [Kiro Code from AWS](https://kiro.dev/) (more like a VS Code clone with some requirements stuff inside) 
 - ...
 
 <br>
 
 > **My Thesis**:
 > - What they do = software development methodology  
-> - These are great, but they still aren't *spec-ing* rigorously enough
+> - These are great, but they still aren't *spec-ing* rigorously enough, and maybe a bit confusing to me with many `/skills` commands
 
 ---
 layout: center
@@ -111,7 +112,7 @@ To truly fix the last mile, we can't just rely on clever prompting or loose mark
 
 **KEY INSIGHT**: Things being messy and badly managed are NOT a new issue. We HUMANS were kinda the ORIGINAL SLOP, but we got the planes in the sky 
 
-We must use **Process Engineering** and **Compliance** to rigorously ground the AI.
+We must use **Better System Development Methodologies** and **Compliance** to rigorously ground the AI.
 
 *It's time to build a system where the AI proves its work against the *law.*
 
@@ -126,6 +127,7 @@ LLM coding is making us **SUPER FAST**. It offloads massive amounts of cognitive
 - **We are moving too fast**: We don't have the time to reflect, learn, or catch mistakes at the speed AI generates code. 
 - **Focus on the Process, not the People**: Because the "human-in-the-loop" is good, but are you quick enough and fast enough? We must rely on a rigorous system to catch errors.
 - **Spec-driven is NOT for every project**: It's not for quick Proof of Concepts (POCs). It is for important software where you actually know what you want to build.
+- **Right vs Wrong**: There's no wrong in a kid's drawing, but maybe your business follows some logics that you can't articulate but you can just do? 
 
 <br>
 
@@ -153,7 +155,7 @@ layout: default
 
 # 🆚 Agile (Scrum) vs V-model (or Waterfall) 
 
-Agile and V-model solve fundamentally different problems.
+The spectrum in Methodology: Agile and V-model solve fundamentally different problems.
 
 - **People-Driven vs Process-Driven**: Agile relies on heroic, talented individuals. V-model relies on a rigorous system.
 - **Iterative vs Upfront Rigor.**
@@ -247,6 +249,9 @@ layout: default
 
 # 🌊 Vibe-Compliance & Impact Analysis
 
+Ask the right question, build the right thing, and build the thing right.
+
+- **Decomposition and Requirement Acquisition** are quite difficult. The agent will walk you through that.
 - **Grounding the LLM:** By having AI help define and clearly document requirements upfront, we create a strict "law" that grounds the LLM, drastically reducing the risk of code drift or "hallucinations".
 - **The Reality of Change:** It's completely okay if you realize later that your initial "law" or design needs changing! Development is about learning.
 - **Robust Paper Trail:** SpecFlow maintains a clear history. When a requirement changes, the tool shows its paper trail and performs a blast-radius impact analysis. 
@@ -329,14 +334,14 @@ SpecFlow runs wherever you do.
 layout: default
 ---
 
-# 📝 My Advices on How to Be Better at AI coding or just Write Better Structured Prompts
+# 📝 My Advices on How to Be Better at AI Coding or just Write Better Structured Prompts
 
 LLM is powerful, but you ?sort of? set the ceiling on how high it can go
 
 - Do NOT rush things
 - **MUST Do a BETTER JOB** on task DECOMPOSITION
 - Track your TODO, and changes in REQ, Design, etc
-- Get some Best Practices/ Common Pitfalls/ Checklist for you to learn, and ensure the LLM does *good work 
+- Self-extrapolation. Get some Best Practices/ Common Pitfalls/ Checklist for you to learn, and ensure the LLM does *good work 
 - Communicate better, like less room for interpretation errors 
   - Some tasks have clear **Correct or Wrong**. Some don't. Best act accordingly.
 
